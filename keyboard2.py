@@ -15,7 +15,7 @@ def openTransction():
     pyautogui.click()
     mouseMove.mouseMove(2064, 994, 30, 0)
     pyautogui.click()
-    mouseMove.mouseMove(632, 300, 30, 0)
+    mouseMove.mouseMove(632, 330, 30, 0)
     pyautogui.click()
    
 
