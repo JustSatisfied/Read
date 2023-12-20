@@ -17,5 +17,5 @@ def mouseMove(x, y, floatx=0, floaty=0):
     move_random = random.uniform(0.3, 0.5)
     float_random_x = random.uniform(0, floatx)
     float_random_y = random.uniform(0, floaty)
-    randomMouseMove()
+    # randomMouseMove()
     pyautogui.moveTo(x-float_random_x,y-float_random_y, move_random)

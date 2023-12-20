@@ -1,12 +1,14 @@
 import pyautogui
 import random
 import mouseMove
+import time
 keyboardRandomList = ['I', 'L', 'K']
 
 
 def keyboardRandom():
     keybord = random.choice(keyboardRandomList)
     pyautogui.press(keybord)
+    time.sleep(1)
     pyautogui.press(keybord)
 
 

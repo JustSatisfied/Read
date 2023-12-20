@@ -2,7 +2,7 @@ from pynput.mouse import Listener
 import pyautogui
 import pytesseract
 from PIL import Image
-
+ 
 def on_click(x, y, button, pressed):
     if pressed:
         print(f"鼠标点击位置：X={x}, Y={y}")
@@ -14,7 +14,7 @@ def on_click(x, y, button, pressed):
 
 def screen(x, y, width, height, name=""):
     # 截取指定区域的图像
-    print(x,y,name)
+ 
     screenshot = pyautogui.screenshot(region=(x, y, width, height))
     
 # 保存截图
@@ -32,3 +32,5 @@ def  imgToNumber(file_name):
  
   return text
 
+
+ 
