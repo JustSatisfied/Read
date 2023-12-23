@@ -9,6 +9,10 @@ import keyboard2
 import user
 import email2
 from datetime import datetime
+import ctypes
+
+
+ctypes.windll.kernel32.SetConsoleTitleW("jiaoyi.py")
 
 now = datetime.now()
 currentWindow.activeWindows("命运方舟")
@@ -45,13 +49,13 @@ def buyGoods(price="10000", leavel=1, count="15"):
 
 def screenCut(leavel):
     for i in range(leavel):
-        transcation.screen(1566, 432+(i*65), 38, 26, str(i+1))
+        transcation.screen(1566, 432+(i*65), 38, 12, str(i+1))
 
 
 def priceError():
     transcation.screen(1075, 748, 40, 20, "b")
     n = transcation.imgToNumber('screenshotb.png')
-    print('屏幕截图',n)
+    print('屏幕截图', n)
     try:
         num1 = int(n)
         pyautogui.moveTo(1199, 899, 0.3)
@@ -69,8 +73,8 @@ def Transction():
     num1 = 10000
     num2 = 15000
     num3 = 100000
-    num4=1000000
-    time_random = random.uniform(2,3)
+    num4 = 1000000
+    time_random = random.uniform(2, 3)
     time.sleep(time_random)
     screenCut(4)
     imgNumber1 = transcation.imgToNumber('screenshot1.png')
@@ -95,18 +99,16 @@ def Transction():
     except ValueError:
         print(ValueError)
     print(num1, num2, num3, num4)
-    print(num3 <= 99)      
+    print(num3 <= 99)
     # if num3 <= 90:
     #         buyGoods("90", 3, "20")
-    if num4 <= 155:
-            buyGoods("150", 4,"10")
-    if num2 <= 22:
-            buyGoods("22", 2)
-    if num1 <= 20:
-            buyGoods('20', 1)
-  
-         
-           
+    # if num4 <= 155:
+    #     buyGoods("150", 4, "10")
+    if num2 <= 23:
+        buyGoods("23", 2)
+    if num1 <= 17:
+        buyGoods('17', 1)
+
     try:
         os.remove("screenshot1.png")
         os.remove("screenshot2.png")
@@ -119,19 +121,21 @@ def Transction():
     pyautogui.moveTo(545, 1183, 0.3)
     pyautogui.click()
 
+
 def transition():
     keyboard2.openTransction()
-    flag=0
+    flag = 0
     while True:
-     flag = flag+1
-     now_mintute=now.minute
-     if now_mintute==11:
-        email2.select_emial()
-     if flag % 10 == 0:
-        random_ = int(random.uniform(1, 3))
-        if random_ == 2:
-            keyboard2.keyboardRandom()
-     else:
-        Transction()
+        flag = flag+1
+        now_mintute = now.minute
+        if now_mintute == 11:
+            email2.select_emial()
+        if flag % 10 == 0:
+            random_ = int(random.uniform(1, 3))
+            if random_ == 2:
+                keyboard2.keyboardRandom()
+        else:
+            Transction()
+
 
 transition()
