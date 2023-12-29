@@ -9,7 +9,7 @@ import keyboard2
 import user
 import email2
 from datetime import datetime
-import ctypes
+import ctypes   
 
 
 ctypes.windll.kernel32.SetConsoleTitleW("jiaoyi.py")
@@ -20,7 +20,7 @@ currentWindow.activeWindows("命运方舟")
 flag = 0
 
 
-def buyGoods(price="10000", leavel=1, count="15"):
+def buyGoods(price="10000", leavel=1, count="10"):
     press_random = random.uniform(0.5, 1)
     leval_ = (leavel-1)*70
     mouseMove.mouseMove(1575, 432+leval_, 35, 5)
@@ -49,7 +49,7 @@ def buyGoods(price="10000", leavel=1, count="15"):
 
 def screenCut(leavel):
     for i in range(leavel):
-        transcation.screen(1566, 432+(i*65), 38, 12, str(i+1))
+        transcation.screen(1563, 430+(i*65), 40, 30, str(i+1))
 
 
 def priceError():
@@ -100,14 +100,14 @@ def Transction():
         print(ValueError)
     print(num1, num2, num3, num4)
     print(num3 <= 99)
-    # if num3 <= 90:
-    #         buyGoods("90", 3, "20")
-    # if num4 <= 155:
-    #     buyGoods("150", 4, "10")
-    if num2 <= 23:
-        buyGoods("23", 2)
-    if num1 <= 17:
-        buyGoods('17', 1)
+    # if num3 <= 80:
+    #         buyGoods("80", 3, "20")
+    if num4 <= 150:
+        buyGoods("141", 4, "10")
+    # if num2 <= 24:
+    #     buyGoods("24", 2)
+    # if num1 <= 17:
+    #     buyGoods('17', 1)
 
     try:
         os.remove("screenshot1.png")
@@ -128,8 +128,8 @@ def transition():
     while True:
         flag = flag+1
         now_mintute = now.minute
-        if now_mintute == 11:
-            email2.select_emial()
+        # if now_mintute == 11:
+        #     email2.select_emial()
         if flag % 10 == 0:
             random_ = int(random.uniform(1, 3))
             if random_ == 2:
